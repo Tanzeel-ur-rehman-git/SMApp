@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import {
   Platform,
   View,
+  Alert,
   Text,
   TouchableOpacity,
   SafeAreaView,
@@ -19,6 +20,7 @@ class HomeScreen extends Component {
     super(props);
     this.state = {
       visible: false,
+      isError: false,
     };
   }
 
@@ -52,9 +54,9 @@ class HomeScreen extends Component {
         <Header
           leftIcon={true}
           leftIconAction={this.NavigationLeft.bind(this)}
-          centerText={"SM"}
+          centerText={""}
           centerTextAction={this.NavigationTextCenter.bind(this)}
-          centerImage={false}
+          centerImage={true}
           centerImageAction={this.NavigationImageCenter.bind(this)}
           righticon={true}
           rightIconAction={this.NavigationRight.bind(this)}
@@ -66,13 +68,13 @@ class HomeScreen extends Component {
             margin: 0,
           }}
         >
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => {
               this.logout();
             }}
           >
             <Text>Click here</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
           <WebView
             style={{
@@ -104,6 +106,7 @@ class HomeScreen extends Component {
             geolocationEnabled
             allowUniversalAccessFromFileURLs
             allowFileAccess
+            onError={() => alert("Please Check Your Internet Connection")}
           />
         </View>
       </View>

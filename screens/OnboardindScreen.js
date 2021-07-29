@@ -145,7 +145,7 @@ class OnboardindScreen extends Component {
           DotComponent={Dots}
           // onSkip={() => {}}
           onDone={() => this.props.navigation.replace("HomeScreen")}
-          skipToPage={2}
+          skipToPage={3}
           pages={[
             {
               backgroundColor: "#f8f7fd",
@@ -173,25 +173,28 @@ class OnboardindScreen extends Component {
                   source={require("../assets/images/2.png")}
                 />
               ),
-              title: (
-                <Text
-                  style={[
-                    styles.titleStyles,
-                    {
-                      // alignSelf: "flex-start",
-                      // paddingLeft: 20,
-                    },
-                  ]}
-                >
-                  Instant Withdraw
-                </Text>
-              ),
-              subtitle: (
-                <Text style={[styles.subTitleStyles, {}]}>
-                  We’re extremely excited to launch instant withdrawals.you can
-                  deposit and withdraw funds in just a few clicks.
-                </Text>
-              ),
+              title: "Instant Withdraw",
+              subtitle:
+                "We’re extremely excited to launch instant withdrawals.you can deposit and withdraw funds in just a few clicks.",
+
+              // title: (
+              //   <Text
+              //     style={[
+              //       styles.titleStyles,
+              //       {
+
+              //       },
+              //     ]}
+              //   >
+              //     Instant Withdraw
+              //   </Text>
+              // ),
+              // subtitle: (
+              //   <Text style={[styles.subTitleStyles, {}]}>
+              //     We’re extremely excited to launch instant withdrawals.you can
+              //     deposit and withdraw funds in just a few clicks.
+              //   </Text>
+              // ),
             },
             {
               backgroundColor: "#f8f7fd",
@@ -250,5 +253,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "600",
   },
-  subTitleStyles: {},
+  subTitleStyles: {
+    textAlign: "justify",
+  },
 });

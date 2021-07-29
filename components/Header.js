@@ -46,8 +46,9 @@ class Header extends Component {
                       style={{
                         height: 25,
                         width: 25,
+                        tintColor: "white",
                       }}
-                      source={require("../assets/images/previous.png")}
+                      source={require("../assets/images/left-arrow.png")}
                     />
                   </View>
                 </TouchableWithoutFeedback>
@@ -94,10 +95,11 @@ class Header extends Component {
                   >
                     <Image
                       style={{
-                        height: 35,
-                        width: 35,
+                        // height: 35,
+                        width: "100%",
                       }}
-                      source={require("../assets/images/logo.png")}
+                      resizeMode="contain"
+                      source={require("../assets/images/logoheader.png")}
                     />
                   </View>
                 </TouchableWithoutFeedback>
@@ -124,10 +126,11 @@ class Header extends Component {
                   >
                     <Image
                       style={{
-                        height: 35,
-                        width: 35,
+                        height: 25,
+                        width: 25,
+                        tintColor: "white",
                       }}
-                      source={require("../assets/images/previous.png")}
+                      source={require("../assets/images/right-arrow.png")}
                     />
                   </View>
                 </TouchableWithoutFeedback>

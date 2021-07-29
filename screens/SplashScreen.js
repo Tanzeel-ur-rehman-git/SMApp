@@ -77,7 +77,7 @@ export const styles = StyleSheet.create({
   container: {
     display: "flex",
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#040302",
   },
   logoText: {
     fontSize: 35,
