@@ -7,6 +7,7 @@ import {
   Dimensions,
   Animated,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 class SplashScreen extends Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class SplashScreen extends Component {
 
   MovetoScreen() {
     setTimeout(() => {
-      this.props.navigation.replace("OnboardindScreen");
+      // this.props.navigation.replace("OnboardindScreen");
+      this.ontimecheck();
     }, 6000);
   }
 
@@ -47,6 +49,15 @@ class SplashScreen extends Component {
       useNativeDriver: false,
     }).start();
   }
+  ontimecheck = async () => {
+    const value = await AsyncStorage.getItem("onboard");
+    if (value !== null) {
+      this.props.navigation.replace("HomeScreen");
+    } else {
+      this.props.navigation.replace("OnboardindScreen");
+    }
+  };
+
   render() {
     return (
       <SafeAreaView style={styles.container}>

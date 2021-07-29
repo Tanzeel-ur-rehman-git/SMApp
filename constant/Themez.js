@@ -6,4 +6,5 @@ export const Colorbasic = {
   secondoryTextColor: "#641ED1",
   background: "#ffffff",
   borderColor: "#80BDFF",
+  background2: "#6E1CCE",
 };

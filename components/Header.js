@@ -24,7 +24,7 @@ class Header extends Component {
         <View
           style={{
             height: 50,
-            // backgroundColor: "red",
+            backgroundColor: "#5216CE",
             flexDirection: "row",
             alignItems: "center",
             paddingHorizontal: 15,

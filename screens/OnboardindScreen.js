@@ -10,6 +10,7 @@ import {
 import Onboarding from "react-native-onboarding-swiper";
 
 import { Colorbasic } from "../constant/Themez";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Dots = ({ selected }) => {
   let backgroundColor;
@@ -115,8 +116,15 @@ class OnboardindScreen extends Component {
     super(props);
     this.state = {};
   }
+  ontimecheck = async () => {
+    await AsyncStorage.setItem("onboard", "123@");
+  };
 
+  componentDidMount() {
+    this.ontimecheck();
+  }
   render() {
+    this.ontimecheck();
     return (
       <View
         style={{
@@ -136,7 +144,7 @@ class OnboardindScreen extends Component {
           showPagination={true}
           DotComponent={Dots}
           // onSkip={() => {}}
-          onDone={() => this.props.navigation.replace("LoginScreen")}
+          onDone={() => this.props.navigation.replace("HomeScreen")}
           skipToPage={2}
           pages={[
             {
@@ -149,12 +157,12 @@ class OnboardindScreen extends Component {
                     width: 150,
                   }}
                   resizeMode="contain"
-                  source={require("../assets/images/onbording1.png")}
+                  source={require("../assets/images/1.png")}
                 />
               ),
-              title: "Welcome to Pet Care",
+              title: "Fast Profit",
               subtitle:
-                "All kind of services for your pet in one place \n All kind of services for your pet in one place",
+                "We're talking about ways you can make money fast.Invest money and get reward, bonus and profit",
             },
             {
               backgroundColor: "#f8f7fd",
@@ -162,7 +170,7 @@ class OnboardindScreen extends Component {
                 <Image
                   style={{ borderRadius: 20, height: 150, width: 150 }}
                   resizeMode="contain"
-                  source={require("../assets/images/onbording2.png")}
+                  source={require("../assets/images/2.png")}
                 />
               ),
               title: (
@@ -175,12 +183,13 @@ class OnboardindScreen extends Component {
                     },
                   ]}
                 >
-                  Proven Experts
+                  Instant Withdraw
                 </Text>
               ),
               subtitle: (
                 <Text style={[styles.subTitleStyles, {}]}>
-                  All kind of services for your pet in one place
+                  We’re extremely excited to launch instant withdrawals.you can
+                  deposit and withdraw funds in just a few clicks.
                 </Text>
               ),
             },
@@ -195,12 +204,30 @@ class OnboardindScreen extends Component {
                     width: 150,
                   }}
                   resizeMode="contain"
-                  source={require("../assets/images/onbording3.png")}
+                  source={require("../assets/images/4.png")}
                 />
               ),
-              title: "Become The Star",
+              title: "Protection",
               subtitle:
-                "All kind of services for your pet in one place \n All kind of services for your pet in one place",
+                "To protect your resources from modern attacks is through a multi-layer deployment of purpose-built mitigation",
+            },
+            {
+              backgroundColor: "#f8f7fd",
+              image: (
+                <Image
+                  style={{
+                    borderRadius: 20,
+                    // right: 20,
+                    height: 150,
+                    width: 150,
+                  }}
+                  resizeMode="contain"
+                  source={require("../assets/images/5.png")}
+                />
+              ),
+              title: "24/7 support",
+              subtitle:
+                "Our Support team is available for any questions.Our multilingual 24/7 support allows to keep in touch.",
             },
           ]}
         />
